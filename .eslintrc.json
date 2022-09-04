@@ -39,7 +39,10 @@
                 "SwitchCase": 1
             }
         ],
-        "quotes": "off",
+        "quotes": [
+            "error",
+            "single"
+        ],
         "jsx-quotes": [
             "error",
             "prefer-single"
