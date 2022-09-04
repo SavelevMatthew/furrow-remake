@@ -7,15 +7,15 @@
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.7",
     "framer-motion": "^1.10.2",
-    "gatsby": "^2.19.45",
-    "gatsby-image": "^2.2.44",
-    "gatsby-plugin-manifest": "^2.2.48",
-    "gatsby-plugin-offline": "^3.0.41",
-    "gatsby-plugin-react-helmet": "^3.1.24",
-    "gatsby-plugin-sharp": "^2.4.13",
-    "gatsby-plugin-styled-components": "^3.2.1",
-    "gatsby-source-filesystem": "^2.1.56",
-    "gatsby-transformer-sharp": "^2.3.19",
+    "gatsby": "^4.22.0",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-manifest": "^4.22.0",
+    "gatsby-plugin-offline": "^5.22.0",
+    "gatsby-plugin-react-helmet": "^5.22.0",
+    "gatsby-plugin-sharp": "^4.22.0",
+    "gatsby-plugin-styled-components": "^5.22.0",
+    "gatsby-source-filesystem": "^4.22.0",
+    "gatsby-transformer-sharp": "^4.22.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-canvas": "^1.3.0",
@@ -26,7 +26,16 @@
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "^7.13.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^1.19.1",
+    "typescript": "^4.1.5"
   },
   "keywords": [
     "gatsby"
@@ -39,7 +48,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "yarn run eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "repository": {
     "type": "git",
@@ -47,6 +57,5 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "packageManager": "yarn@3.2.3"
+  }
 }

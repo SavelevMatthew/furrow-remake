@@ -1,0 +1,105 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true,
+        "jest/globals": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2019,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "jest"
+    ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "ignorePatterns": [
+        "dist",
+        "public"
+    ],
+    "rules": {
+        "comma-spacing": "error",
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "quotes": "off",
+        "jsx-quotes": [
+            "error",
+            "prefer-single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "space-before-function-paren": [
+            "error",
+            "always"
+        ],
+        "comma-dangle": [
+            "error",
+            {
+                "functions": "only-multiline",
+                "arrays": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "objects": "always-multiline"
+            }
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "no-unused-vars": [
+            "warn",
+            {
+                "args": "none"
+            }
+        ],
+        "no-array-constructor": [
+            "error"
+        ],
+        "no-loop-func": [
+            "warn"
+        ],
+        "no-loss-of-precision": [
+            "error"
+        ],
+        "no-useless-constructor": [
+            "error"
+        ],
+        "no-prototype-builtins": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "react/no-children-prop": "off",
+        "react/display-name": "warn",
+        "react/jsx-curly-brace-presence": [
+            "error",
+            {
+                "props": "never",
+                "children": "never"
+            }
+        ],
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+    }
+}
