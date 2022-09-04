@@ -6,14 +6,15 @@ import { normalize } from 'styled-normalize'
 import { lightTheme, darkTheme } from '../themes'
 
 import Header from './header'
+import CustomCursor from './customCursor'
 
-import { useGlobalStateContext } from '../context/global'
+import { useGlobalStateContext, useGlobalDispatchContext } from '../context/global'
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
   * {
     text-decoration: none;
-    //cursor: none;
+    cursor: none;
   }
   
   html {
@@ -31,12 +32,22 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
+    const dispatch = useGlobalDispatchContext()
     const { currentTheme } = useGlobalStateContext()
+
+    const addCursor = (cursor) => {
+        dispatch({ type: 'ADD_CURSOR_TYPE', payload: cursor })
+    }
+
+    const removeCursor = (cursor) => {
+        dispatch({ type: 'REMOVE_CURSOR_TYPE', payload: cursor })
+    }
 
     return (
         <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
             <GlobalStyle/>
-            <Header/>
+            <CustomCursor/>
+            <Header addCursor={addCursor} removeCursor={removeCursor} />
             <main>{children}</main>
         </ThemeProvider>
     )
