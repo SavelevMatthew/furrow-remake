@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { normalize } from 'styled-normalize'
@@ -7,6 +7,7 @@ import { lightTheme, darkTheme } from '../themes'
 
 import Header from './header'
 import CustomCursor from './customCursor'
+import Navigation from './navigation'
 
 import { useGlobalStateContext, useGlobalDispatchContext } from '../context/global'
 
@@ -32,6 +33,8 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
+    const [toggleMenu, setToggleMenu] = useState(false)
+
     const dispatch = useGlobalDispatchContext()
     const { currentTheme } = useGlobalStateContext()
 
@@ -46,8 +49,19 @@ const Layout = ({ children }) => {
     return (
         <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
             <GlobalStyle/>
-            <CustomCursor/>
-            <Header addCursor={addCursor} removeCursor={removeCursor} />
+            <CustomCursor toggleMenu={toggleMenu}/>
+            <Header
+                addCursor={addCursor}
+                removeCursor={removeCursor}
+                toggleMenu={toggleMenu}
+                setToggleMenu={setToggleMenu}
+            />
+            <Navigation
+                addCursor={addCursor}
+                removeCursor={removeCursor}
+                toggleMenu={toggleMenu}
+                setToggleMenu={setToggleMenu}
+            />
             <main>{children}</main>
         </ThemeProvider>
     )

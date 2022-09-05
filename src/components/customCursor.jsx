@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Cursor } from '../styles/global'
 import { useGlobalStateContext } from '../context/global'
 
-const CustomCursor = () => {
+const CustomCursor = ({ toggleMenu }) => {
     const { cursorTypes } = useGlobalStateContext()
     const [mousePos, setMousePos] = useState({
         x: 400,
@@ -26,6 +26,7 @@ const CustomCursor = () => {
     const cursorClass = classNames({
         'cursor-hover': Array.isArray(cursorTypes) && cursorTypes.includes('hover'),
         'cursor-pointer': Array.isArray(cursorTypes) && cursorTypes.includes('pointer'),
+        'cursor-nav': toggleMenu,
     })
 
     return (
